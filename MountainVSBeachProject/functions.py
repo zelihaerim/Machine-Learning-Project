@@ -69,8 +69,7 @@ def run_model(i, models, df, predictions, X_train, X_test, y_train, y_test):
     target_names=['0','1']
     model = list(models.values())[i]
     model.fit(X_train, y_train) # Train model
-    
-    # Make predictions
+
     y_train_pred = model.predict(X_train)
     y_test_pred = model.predict(X_test)
     predictions[list(models.keys())[i]] = model.predict_proba(X_test)[:, 1]
@@ -94,11 +93,9 @@ def make_prediction(models, df):
     zero_ratio = np.round(len(y[y==0]) / len(y), decimals=2)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
     predictions={'True': y_test}
-
     with Timer() as timer_time:
         for i in range(len(list(models))):
             run_model(i, models, df, predictions, X_train, X_test, y_train, y_test)
-        print(predictions)
         plot_model_roc_auc_curve(list(models.keys()), predictions)
     print(f"Fit + Predict time (seconds): {timer_time.elapsed}")   
     return timer_time.elapsed
