@@ -2,16 +2,16 @@
 - Predict whether people would prefer a mountain holiday or a beach holiday.
 - Dataset of this project is fetched from Kaggle, here is url : https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference
 ## Dataset Info
-This dataset aims to analyze public preferences between two popular vacation types: mountains and beaches. It provides insights into various demographic and lifestyle factors that may influence these preferences. By exploring this dataset, users can apply multiple machine learning techniques to predict whether individuals prefer mountains or beaches based on their attributes.
-Dataset Structure:
-Number of Instances: 52444 🧮
-Number of Features: 13 
+This dataset aims to analyze public preferences between two popular vacation types: mountains and beaches. It provides insights into various demographic and lifestyle factors that may influence these preferences. By exploring this dataset, users can apply multiple machine learning techniques to predict whether individuals prefer mountains or beaches based on their attributes.<br>
+Dataset Structure: <br>
+Number of Instances: 52444 🧮<br>
+Number of Features: 13 🔢<br>
 
 - Labels 
   - 1 means prefers mountains ⛰️
   - 0 for beaches 🏖️
 
-- Features
+- Features 🔧
       - The dataset contains the following features:
   - Age: Age of the individual (numerical). 👨‍👨‍👧‍👦
   - Gender: Gender identity of the individual (categorical: male, female, non-binary). 🚻
