@@ -1,4 +1,4 @@
-# Binary Classification Task
+# Binary Classification Task ⬜⬛
 - Predict whether people would prefer a mountain holiday or a beach holiday.
 - Dataset of this project is fetched from Kaggle, here is url : https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference
 ## Dataset Info
