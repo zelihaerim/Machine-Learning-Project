@@ -4,7 +4,7 @@
 - Some projects also has neural networks. ⛓️
 - I used acceleration techniques whenever possible. ⏱️
 - As I do machine learning project, I will add here. 📌
-# Content
+# Content 📋
 * HealthcareProject ➡️ Visualization 📈📉
 * MechanismOfAction(MoA) ➡️ Regression 📏
 * MountainVSBeachProject ➡️ Binary Classification Task ◻️◼️
