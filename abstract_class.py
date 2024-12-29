@@ -122,7 +122,7 @@ c2.run()
 c2.speak()
 c3.speak()
 print("------------Print Override methods--------------------")
-print(b1.toString()) # overrided from Animal which overrides from object class
+print(b1.toString()) # call bird overrided function from Animal class which overrides from object class
 print(c1.__str__()) # comes from Animal overrided str method from Object class
 print("------------Show class and object info--------------------")
 print("Show Cat class methods: ", Cat.__dict__, "\n\n")
