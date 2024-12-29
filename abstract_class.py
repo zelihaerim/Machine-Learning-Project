@@ -1,3 +1,4 @@
+#%% Write class
 # -*- coding: utf-8 -*-
 
 from abc import ABC, abstractmethod
@@ -9,7 +10,9 @@ class Owner:
     name: str
     age: int
     gender: str
-     
+
+animal_list = []
+
 class Animal(ABC): # super class
     
     static_counter = 0
@@ -41,6 +44,9 @@ class Animal(ABC): # super class
     def __str__(self):
         return "You called Animal override method str method."
     
+    def _insert_animal_list(self):
+        animal_list.append(self)
+        
 
 class Bird(Animal): # sub class
     
@@ -53,7 +59,9 @@ class Bird(Animal): # sub class
             print(f"bird with name : {name}, owner: {self._owner}")
         else:
             print(f"bird is created. owner: {self._owner}")
-     
+        self._insert_animal_list()
+        
+    
     def walk(self): 
         print("flutter")
 
@@ -77,6 +85,7 @@ class Cat(Animal): # sub class
             print(f"cat with name : {name},  owner: {self._owner}")
         else:
             print(f"cat is created.  owner: {self._owner}")
+        self._insert_animal_list()
         
     def walk(self): 
         print("paw_paw")
@@ -89,19 +98,18 @@ class Cat(Animal): # sub class
     
     def run(self):
         print("cat is running")
-    """def toString(self): # Cat to string comes from parent class inhereted.
-        pass"""
+    def toString(self):
+        return "You called Cat Overriding toString method."
 
 owner_zeliha = Owner("Zeliha", math.inf, "Woman")
 
-
+#%% Run Program
 b1 = Bird(None, None)
 b2 = Bird("cicikus", owner_zeliha)
 c1 = Cat(None, None)
 c2 = Cat("boncuk", owner_zeliha)
 c3 = Cat("minnos", None)
 
-Animal.print_count()
 print(f"Message from cat object : {b1()}")
 print("Message from bird object :", c1())
 
@@ -113,11 +121,20 @@ c2.run()
 c2.speak()
 c3.speak()
 print("**************************")
+
 print(b1.toString()) # overrided from Animal which overrides from object class
 print(c1.__str__()) # comes from Animal overrided str method from Object class
 print("**************************")
 print("Show Cat class methods: ", Cat.__dict__, "\n\n")
 print("Show cat object variables: ",c1.__dict__)
+
+print("--------------------------------")
+print("Num of created object from static method: ")
+Animal.print_count()
+print(f"Num of created object from global variable: {len(animal_list)}")
+
+for i in animal_list:
+    print(i.toString())
 
 """
 -> Output:
@@ -126,7 +143,6 @@ bird with name : cicikus, owner: Owner(name='Zeliha', age=inf, gender='Woman')
 cat is created.  owner: Owner(name='nature', age=inf, gender='no_gender')
 cat with name : boncuk,  owner: Owner(name='Zeliha', age=inf, gender='Woman')
 cat with name : minnos,  owner: Owner(name='nature', age=inf, gender='no_gender')
-Number of created animal is 5
 Message from cat object : we are derived from Animal class.
 Message from bird object : we are derived from Animal class.
 **************************
@@ -140,8 +156,17 @@ meow meow
 You called Bird Overriding toString method.
 You called Animal override method str method.
 **************************
-Show Cat class methods:  {'__module__': '__main__', '__init__': <function Cat.__init__ at memory_address>, 'walk': <function Cat.walk at memory_address>, 'eat': <function Cat.eat at memory_address>, 'speak': <function Cat.speak at memory_address>, 'run': <function Cat.run at memory_address>, '__doc__': None, '__abstractmethods__': frozenset(), '_abc_impl': <_abc._abc_data object at memory_address>} 
+Show Cat class methods:  {'__module__': '__main__', '__init__': <function Cat.__init__ at memory_address>, 'walk': <function Cat.walk at memory_address>, 'eat': <function Cat.eat at memory_address>, 'speak': <function Cat.speak at memory_address>, 'run': <function Cat.run at memory_address>, 'toString': <function Cat.toString at memory_address>, '__doc__': None, '__abstractmethods__': frozenset(), '_abc_impl': <_abc._abc_data object at memory_address>} 
 
 
 Show cat object variables:  {'_owner': Owner(name='nature', age=inf, gender='no_gender'), 'name': None}
+--------------------------------
+Num of created object from static method: 
+Number of created animal is 5
+Num of created object from global variable: 5
+You called Bird Overriding toString method.
+You called Bird Overriding toString method.
+You called Cat Overriding toString method.
+You called Cat Overriding toString method.
+You called Cat Overriding toString method.
 """
