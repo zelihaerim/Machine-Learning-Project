@@ -119,4 +119,29 @@ print("**************************")
 print("Show Cat class methods: ", Cat.__dict__, "\n\n")
 print("Show cat object variables: ",c1.__dict__)
 
+"""
+-> Output:
+bird is created. owner: Owner(name='nature', age=inf, gender='no_gender')
+bird with name : cicikus, owner: Owner(name='Zeliha', age=inf, gender='Woman')
+cat is created.  owner: Owner(name='nature', age=inf, gender='no_gender')
+cat with name : boncuk,  owner: Owner(name='Zeliha', age=inf, gender='Woman')
+cat with name : minnos,  owner: Owner(name='nature', age=inf, gender='no_gender')
+Number of created animal is 5
+Message from cat object : we are derived from Animal class.
+Message from bird object : we are derived from Animal class.
+**************************
+worm
+flutter
+cat food
+cat is running
+meow meow
+meow meow
+**************************
+You called Bird Overriding toString method.
+You called Animal override method str method.
+**************************
+Show Cat class methods:  {'__module__': '__main__', '__init__': <function Cat.__init__ at memory_address>, 'walk': <function Cat.walk at memory_address>, 'eat': <function Cat.eat at memory_address>, 'speak': <function Cat.speak at memory_address>, 'run': <function Cat.run at memory_address>, '__doc__': None, '__abstractmethods__': frozenset(), '_abc_impl': <_abc._abc_data object at memory_address>} 
 
+
+Show cat object variables:  {'_owner': Owner(name='nature', age=inf, gender='no_gender'), 'name': None}
+"""
